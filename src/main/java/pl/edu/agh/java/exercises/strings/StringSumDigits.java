@@ -1,5 +1,8 @@
 package pl.edu.agh.java.exercises.strings;
 
+
+import java.util.Calendar;
+
 /**
  * Given a string, return the sum of the digits 0-9 that appear in the string, ignoring all other characters. Return 0
  * if there are no digits in the string.
@@ -12,10 +15,20 @@ package pl.edu.agh.java.exercises.strings;
  * Character.isDigit(char) sprawdza czy dany znak jest jednym ze znaków '0', '1', .. '9'.
  * Integer.parseInt(string) konwertuje string to liczby całkowitej.
  *
- * @see http://codingbat.com/prob/p197890
+ * @seehttp://codingbat.com/prob/p197890
  */
 public class StringSumDigits {
     public int sumDigits(String str) {
-        throw new UnsupportedOperationException();
+
+        int result = 0;
+
+        for (char c : str.toCharArray()) {
+
+            if (Character.isDigit(c)) {
+                result += Integer.parseInt(String.valueOf(c));
+            }
+        }
+
+        return result;
     }
 }
